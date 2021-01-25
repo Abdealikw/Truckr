@@ -9,7 +9,7 @@ const SearchInput = ({ onLocationSelected }) => {
 
     return (
         <GooglePlacesAutocomplete
-            placeholder="Where to go ?"
+            placeholder="Where to ?"
             onPress={onLocationSelected}
             query={{
                 key: MAPS_API_KEY,

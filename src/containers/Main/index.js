@@ -30,7 +30,7 @@ const Main = () => {
         };
     };
 
-    const [region, setRegion] = useState(regionFrom(25.2048, 55.2708, 10));
+    const [region, setRegion] = useState(regionFrom(25.2048, 55.2708, 500));
     const [destination, setDestination] = useState(null);
     const [location, setLocation] = useState(null);
 
@@ -40,22 +40,15 @@ const Main = () => {
             enableHighAccuracy: true,
         };
 
-        console.log('Geolocation');
-
         Geolocation.getCurrentPosition(
             async ({ coords: { latitude, longitude } }) => {
                 const response = await Geocoder.from({ latitude, longitude });
-                console.log('response', response);
                 const address = response.results[0].formatted_address;
                 const shortAddress = address.substring(0, address.indexOf(','));
-
-                setRegion(regionFrom(latitude, longitude));
+                setRegion(regionFrom(latitude, longitude, 500));
                 setLocation(shortAddress);
             },
-            (error) => {
-                console.log(error);
-                Alert.alert(error.message);
-            },
+            (error) => Alert.alert(error.message),
             options,
         );
     }, []);

@@ -6,7 +6,7 @@ import RootScreen from './src/containers/Root/RootScreen';
 import SplashScreen from './src/containers/SplashScreen/SplashScreen';
 import rootReducer from './src/redux/reducers';
 import rootSaga from './src/redux/sagas';
-import configureStore from './src/redux/store/configureStore';
+import configureStore from './src/store/configureStore';
 
 const { store, persistor } = configureStore(rootReducer, rootSaga);
 

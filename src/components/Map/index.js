@@ -1,5 +1,5 @@
 import React, { useState, useRef, Fragment } from 'react';
-import MapView, { Marker } from 'react-native-maps';
+import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import PropTypes from 'prop-types';
 import { Image } from 'react-native';
 import {
@@ -47,6 +47,7 @@ const Map = ({
         <Container>
             <MapView
                 ref={inputEl}
+                provider={PROVIDER_GOOGLE}
                 style={{ flex: 1 }}
                 region={region}
                 showsUserLocation
@@ -89,7 +90,11 @@ const Map = ({
             {destination ? (
                 <Fragment>
                     <Back onPress={onPressBackButton}>
-                        <Image source={backImage} />
+                        <Image
+                            source={backImage}
+                            resizeMode="cover"
+                            style={{ width: 25, height: 20 }}
+                        />
                     </Back>
                     <Details />
                 </Fragment>

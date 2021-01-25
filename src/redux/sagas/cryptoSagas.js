@@ -1,10 +1,10 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { ExchangeService } from '../../services/ExchangeService';
 import {
-  fetchCoinDataFailure,
-  fetchCoinDataLoading,
-  fetchCoinDataSuccess,
-  FETCH_COIN_DATA_REQUEST,
+    fetchCoinDataFailure,
+    fetchCoinDataLoading,
+    fetchCoinDataSuccess,
+    FETCH_COIN_DATA_REQUEST,
 } from '../actions/cryptoActions';
 /**
  *
@@ -17,19 +17,19 @@ import {
  * Put eh "nao blocante" - a chamada eh executada asyncrona
  */
 function* fetchCoinData() {
-  // seta reducer para estado de loading
-  yield put(fetchCoinDataLoading());
+    // seta reducer para estado de loading
+    yield put(fetchCoinDataLoading());
 
-  // Fetch API
-  const coinData = yield call(ExchangeService.fetchCoinData);
+    // Fetch API
+    const coinData = yield call(ExchangeService.fetchCoinData);
 
-  if (coinData) {
-    yield put(fetchCoinDataSuccess(coinData));
-  } else {
-    yield put(fetchCoinDataFailure('Erro na chamada da API.'));
-  }
+    if (coinData) {
+        yield put(fetchCoinDataSuccess(coinData));
+    } else {
+        yield put(fetchCoinDataFailure('Erro na chamada da API.'));
+    }
 }
 
 export function* watchFetchCoinData() {
-  yield takeLatest(FETCH_COIN_DATA_REQUEST, fetchCoinData);
+    yield takeLatest(FETCH_COIN_DATA_REQUEST, fetchCoinData);
 }

@@ -76,9 +76,6 @@ const RootScreen = () => {
             <View style={{ flex: 1 }}>
                 <Loading visible={loading} animation="fade" />
                 <AppContainer
-                    // Utilizando NavigationService para permitir navegar de onde navigation props nao for acessível
-                    // Permite navegar direto de um Saga, por exemplo
-                    // NavigationService (https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html)
                     ref={(navigatorRef) => {
                         NavigationService.setTopLevelNavigator(navigatorRef);
                     }}

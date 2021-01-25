@@ -8,19 +8,19 @@ import {
     RequestButtonText,
 } from './styles';
 
-import uberxImage from '../../assets/uberx.png';
+import truckImage from '../../assets/truck.jpg';
 
 const Details = () => (
     <Container>
         <TypeTitle>Popular</TypeTitle>
-        <TypeDescription>Viagens baratas para o dia a dia</TypeDescription>
+        <TypeDescription>Cheap day-to-day transport</TypeDescription>
 
-        <TypeImage source={uberxImage} />
-        <TypeTitle>UberX</TypeTitle>
-        <TypeDescription>R$ 6,00</TypeDescription>
+        <TypeImage source={truckImage} resizeMode="contain" />
+        <TypeTitle>Truck</TypeTitle>
+        <TypeDescription>AED 100</TypeDescription>
 
         <RequestButton onPress={() => {}}>
-            <RequestButtonText>Solicitar UberX</RequestButtonText>
+            <RequestButtonText>Book now</RequestButtonText>
         </RequestButton>
     </Container>
 );

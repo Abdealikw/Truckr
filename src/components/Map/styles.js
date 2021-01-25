@@ -30,11 +30,11 @@ export const LocationBox = styled.View`
 export const LocationText = styled.Text`
     margin: 8px 10px;
     font-size: 14px;
-    color: #333;
+    color: #002171;
 `;
 
 export const LocationTimeBox = styled.View`
-    background: #222;
+    background: #002171;
     padding: 3px 8px;
 `;
 
@@ -53,5 +53,5 @@ export const LocationTimeTextSmall = styled.Text`
 export const Back = styled.TouchableOpacity`
     position: absolute;
     top: ${getStatusBarHeight()};
-    left: 20px;
+    left: 5%;
 `;

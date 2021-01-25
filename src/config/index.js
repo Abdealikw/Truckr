@@ -1,2 +1,1 @@
-export const EXCHANGE_BASE_API_URL = 'https://api.coinmarketcap.com/v2/';
-export const MAPS_API_KEY = 'AIzaSyBehIZYeZJikOazEtGt0m0m24dplgXk4co';
+export const MAPS_API_KEY = 'AIzaSyAV8lud6Zri2IhTs1xTAQ3kO1niOMOu71g';

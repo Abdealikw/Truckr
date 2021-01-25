@@ -9,8 +9,8 @@ const Directions = ({ destination, origin, onReady }) => (
         destination={destination}
         onReady={onReady}
         apikey={MAPS_API_KEY}
-        strokeWidth={3}
-        strokeColor="#222"
+        strokeWidth={4}
+        strokeColor="#002171"
     />
 );
 
