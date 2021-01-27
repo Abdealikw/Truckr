@@ -7,6 +7,9 @@ target 'Truckr' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
+  
+  pod 'GoogleMaps'
+  pod 'Google-Maps-iOS-Utils'
 
   target 'TruckrTests' do
     inherit! :complete
@@ -20,14 +23,18 @@ target 'Truckr' do
   use_flipper!
   post_install do |installer|
     flipper_post_install(installer)
-  end
-end
 
-target 'Truckr-tvOS' do
-  # Pods for Truckr-tvOS
-
-  target 'Truckr-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
+    installer.pods_project.targets.each do |target|
+       if target.name == 'react-native-google-maps'
+          target.build_configurations.each do |config|
+          config.build_settings['CLANG_ENABLE_MODULES'] = 'No'
+       end
+    end
+       if target.name == "React"
+         target.remove_from_project
+       end
+    end
   end
+  
+  
 end

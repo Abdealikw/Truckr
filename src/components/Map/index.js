@@ -47,7 +47,7 @@ const Map = ({
         <Container>
             <MapView
                 ref={inputEl}
-                provider={PROVIDER_GOOGLE}
+                // provider={PROVIDER_GOOGLE}
                 style={{ flex: 1 }}
                 region={region}
                 showsUserLocation
